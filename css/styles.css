@@ -1,0 +1,611 @@
+/* Variables globales */
+:root {
+    --section-padding: clamp(4rem, 8vw, 8rem);
+    --container-padding: clamp(1rem, 5vw, 2rem);
+    --heading-large: clamp(2.5rem, 5vw, 4rem);
+    --heading-medium: clamp(2rem, 4vw, 3rem);
+    --color-primary: #E6B5AC;
+    --color-secondary: #E6C3A5;
+    --color-text: #2D3748;
+    --color-heading: #3D3D3D;
+    --color-bg-light: #FAF5F2;
+    --gradient-bg: linear-gradient(135deg, #FFF5F2 0%, #FFF9F9 100%);
+}
+
+body {
+    background: var(--gradient-bg);
+    color: var(--color-text);
+    font-family: 'Oxygen', sans-serif;
+    line-height: 1.6;
+}
+
+/* Estilos no críticos */
+/* Animaciones globales */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animaciones de botones */
+.btn-primary {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.btn-primary:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: translateX(-100%);
+}
+.btn-primary:hover:after {
+    transform: translateX(100%);
+    transition: transform 0.6s ease;
+}
+
+/* Animación del texto rotativo */
+.rotating-text {
+    transition: transform 0.3s ease;
+}
+.rotating-text:hover {
+    animation-play-state: paused;
+}
+
+/* Animaciones de tarjetas */
+.achievement-card {
+    transition: all 0.4s ease;
+    position: relative;
+}
+.achievement-card:hover {
+    transform: translateY(-10px);
+}
+.achievement-image {
+    transition: transform 0.6s ease;
+}
+.achievement-card:hover .achievement-image {
+    transform: scale(1.05);
+}
+
+/* Animaciones de testimonios */
+.testimonial-card {
+    transition: all 0.4s ease;
+}
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Animaciones de tabs */
+.tab-button {
+    transition: all 0.3s ease;
+}
+.tab-button:hover:not(.active) {
+    background-color: rgba(218,164,154,0.1);
+}
+.tab-content {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+.tab-content.active {
+    opacity: 1;
+}
+
+.accordion-content {
+    display: none;
+    padding: 1rem;
+}
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.achievement-card.offset {
+    margin-top: 4rem;
+}
+.achievement-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.achievement-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #4A5568;
+}
+.founder-section {
+    background-color: #fff;
+    padding: 4rem 0;
+}
+.founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    align-items: center;
+}
+.founder-image {
+    width: 100%;
+    border-radius: 2rem;
+    position: relative;
+    z-index: 1;
+}
+.founder-image-container {
+    position: relative;
+}
+.founder-image-bg {
+    position: absolute;
+    bottom: -2rem;
+    left: -2rem;
+    width: 100%;
+    height: 100%;
+    background-color: #E6C3A5;
+    border-radius: 2rem;
+    z-index: 0;
+}
+.highlight {
+    color: #DAA49A;
+}
+.logos-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    align-items: center;
+    margin-top: 4rem;
+    opacity: 0.7;
+}
+.logo-item {
+    max-width: 120px;
+}
+.faq-section {
+    background-color: #FAF5F2;
+    padding: 4rem 0;
+}
+.faq-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    align-items: start;
+}
+.accordion-item {
+    border-bottom: 1px solid #E2D5D0;
+    margin-bottom: 1rem;
+}
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 600;
+    background-color: #f9f9f9;
+}
+.accordion-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #DAA49A;
+    border: 2px solid currentColor;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 1rem;
+}
+.accordion-content.active {
+    max-height: 500px;
+    padding-bottom: 1.5rem;
+    display: block;
+    opacity: 1;
+}
+.faq-image-container {
+    width: 100%;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+.testimonials-section {
+    background-color: #4A4A4A;
+    color: white;
+    padding: 6rem 0;
+}
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.testimonials-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #E6C3A5;
+}
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+.testimonial-card {
+    background-color: white;
+    color: #4A4A4A;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    position: relative;
+}
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 30px;
+    border-width: 20px 20px 0;
+    border-style: solid;
+    border-color: white transparent transparent;
+}
+.testimonial-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #2D3748;
+}
+.testimonial-text {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+.author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+.author-name {
+    font-weight: 600;
+    color: #DAA49A;
+}
+.agenda-section {
+    background: linear-gradient(135deg, #FAF5F2 0%, #FFF5F5 100%);
+    padding: 6rem 0;
+}
+.agenda-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.tabs-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.tab-button {
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #4A5568;
+}
+.tab-button.active {
+    background-color: #DAA49A;
+    color: white;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+.agenda-steps {
+    margin-top: 2rem;
+}
+.step-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.step-number {
+    width: 32px;
+    height: 32px;
+    background-color: #DAA49A;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+.step-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2D3748;
+}
+.footer {
+    background-color: #FAF5F2;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #4A5568;
+}
+.footer a {
+    color: #DAA49A;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Ajustes de layout */
+.container {
+    padding: 0 var(--container-padding);
+}
+
+/* Header ajustes */
+header {
+    padding: clamp(2rem, 5vw, 4rem) 0;
+}
+
+.logo-container {
+    padding: clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3rem);
+}
+
+.logo-text {
+    color: var(--color-heading);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+}
+
+.rotating-text-container {
+    width: clamp(180px, 25vw, 250px);
+    height: clamp(180px, 25vw, 250px);
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Hero section ajustes */
+.hero-section {
+    padding: var(--section-padding) 0;
+    margin-top: clamp(2rem, 4vw, 4rem);
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    color: var(--color-heading);
+    font-size: var(--heading-large);
+    line-height: 1.2;
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.hero-content p {
+    color: #666;
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    max-width: 540px;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    border-radius: 2rem;
+    padding: 1rem clamp(2.5rem, 5vw, 3.5rem);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+/* Achievement section ajustes */
+.achievements-section {
+    padding: var(--section-padding) 0;
+}
+
+.achievement-card {
+    position: relative;
+    text-align: center;
+    margin-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+.achievement-image-container {
+    position: relative;
+    padding-bottom: 100%;
+    margin-bottom: 2rem;
+}
+
+.achievement-image-bg {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.achievement-card:nth-child(1) .achievement-image-bg {
+    background-color: var(--color-primary);
+    opacity: 0.2;
+}
+
+.achievement-card:nth-child(2) .achievement-image-bg {
+    background-color: var(--color-secondary);
+    opacity: 0.3;
+}
+
+.achievement-card:nth-child(3) .achievement-image-bg {
+    background-color: var(--color-primary);
+    opacity: 0.2;
+}
+
+.achievement-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    z-index: 1;
+}
+
+/* Founder section ajustes */
+.founder-section {
+    padding: var(--section-padding) 0;
+}
+
+.founder-grid {
+    gap: clamp(3rem, 6vw, 6rem);
+}
+
+.founder-image-bg {
+    bottom: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+}
+
+/* Logos ajustes */
+.logos-grid {
+    gap: clamp(2rem, 4vw, 4rem);
+    opacity: 0.5;
+    padding: clamp(3rem, 6vw, 6rem) 0;
+}
+
+.logo-item {
+    max-width: clamp(80px, 15vw, 120px);
+}
+
+/* FAQ section ajustes */
+.faq-section {
+    background-color: var(--color-bg-light);
+    padding: var(--section-padding) 0;
+}
+
+.accordion-item {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    background: transparent;
+}
+
+.accordion-header span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--color-heading);
+}
+
+.accordion-icon {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    opacity: 0;
+    padding: 0 2rem 0 0;
+}
+
+.accordion-content p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Testimonials ajustes */
+.testimonials-section {
+    padding: var(--section-padding) 0;
+}
+
+.testimonial-card {
+    padding: clamp(2rem, 4vw, 3rem);
+}
+
+/* Agenda section ajustes */
+.agenda-section {
+    padding: var(--section-padding) 0;
+}
+
+.tab-button {
+    padding: 1rem clamp(1.5rem, 3vw, 2.5rem);
+    border-radius: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section,
+    .founder-grid,
+    .faq-container,
+    .testimonials-grid,
+    .agenda-container {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-card.offset {
+        margin-top: 0;
+    }
+
+    .achievements-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .logos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
