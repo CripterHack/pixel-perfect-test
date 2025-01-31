@@ -1,0 +1,40 @@
+// Global scroll animations
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Rotating text animations
+.rotating-text {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+// Achievement card animations
+.achievement {
+    &-card {
+        transition: all 0.4s ease;
+        position: relative;
+
+        &:hover {
+            transform: translateY(-10px);
+
+            .achievement-image {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &-image {
+        transition: transform 0.6s ease;
+    }
+} 

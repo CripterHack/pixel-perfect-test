@@ -1,0 +1,22 @@
+@use "../utils/variables" as vars;
+@use "sass:map";
+
+.logos {
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+    margin-top: 4rem;
+    opacity: 1;
+    padding: clamp(3rem, 6vw, 6rem) 0;
+
+    @media (min-width: map.get(vars.$breakpoints, 'md')) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-item {
+    max-width: clamp(80px, 15vw, 120px);
+  }
+}

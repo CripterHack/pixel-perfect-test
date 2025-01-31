@@ -12,7 +12,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Acordeón mejorado
+// Acordeón
 function initAccordion() {
     const accordionItems = document.querySelectorAll(".accordion-item");
     
@@ -72,7 +72,7 @@ function initAccordion() {
     });
 }
 
-// Tabs mejorados
+// Tabs
 function initTabs() {
     const tabButtons = document.querySelectorAll(".tab-button");
     const tabContents = document.querySelectorAll(".tab-content");

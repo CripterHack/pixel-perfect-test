@@ -1,0 +1,71 @@
+// Durations
+$durations: (
+  'fast': 150ms,
+  'normal': 300ms,
+  'slow': 500ms
+);
+
+// Easings
+$easings: (
+  'linear': linear,
+  'ease': ease,
+  'ease-in': ease-in,
+  'ease-out': ease-out,
+  'ease-in-out': ease-in-out
+);
+
+// Animation Keyframes
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Animation Classes
+.animate-fade-in {
+  animation: fadeIn var(--duration-normal) var(--easing-ease-out);
+}
+
+.animate-slide-up {
+  animation: slideUp var(--duration-normal) var(--easing-ease-out);
+}
+
+.animate-slide-in {
+  animation: slideIn var(--duration-normal) var(--easing-ease-out);
+}
+
+// Transition Utilities
+@each $name, $duration in $durations {
+  .duration-#{$name} {
+    --duration-#{$name}: #{$duration};
+    transition-duration: $duration;
+  }
+}
+
+@each $name, $easing in $easings {
+  .easing-#{$name} {
+    --easing-#{$name}: #{$easing};
+    transition-timing-function: $easing;
+  }
+} 

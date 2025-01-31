@@ -1,0 +1,242 @@
+@use "../utils/variables" as vars;
+@use "../utils/typography" as type;
+@use "sass:map";
+@use "./base";
+
+.achievements {
+
+  &-section {
+    padding: 2.42rem 0 8rem;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(230, 181, 172, 0.05), transparent 70%);
+      pointer-events: none;
+    }
+    
+    .container {
+      max-width: 1680px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 7.5rem;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__container {
+    @extend .container;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4rem;
+    position: relative;
+    
+    @media (max-width: map.get(vars.$breakpoints, 'lg')) {
+      grid-template-columns: 1fr;
+      gap: 5rem;
+    }
+  }
+
+  &__item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-bg-light);
+    border-radius: 0.5rem;
+    transition: transform var(--duration-normal) var(--easing-ease);
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__number {
+    @extend .text-3xl;
+    font-weight: map.get(type.$font-weights, 'bold');
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  &__label {
+    color: var(--color-text);
+    opacity: 0.9;
+  }
+
+  &-card {
+    &.offset {
+      margin-top: 4rem;
+
+      @media (min-width: map.get(vars.$breakpoints, 'md')) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &-text {
+    font-size: 1.69rem;
+    line-height: 1.41em;
+    color: #4A5568;
+  }
+}
+
+.achievement {
+  &-card {
+    position: relative;
+    text-align: center;
+    margin-bottom: clamp(2rem, 4vw, 4rem);
+
+    &:nth-child(1) .achievement-image-bg {
+      background-color: var(--color-primary);
+      opacity: 0.2;
+    }
+    &:nth-child(2) .achievement-image-bg {
+      background-color: var(--color-secondary);
+      opacity: 0.3;
+    }
+    &:nth-child(3) .achievement-image-bg {
+      background-color: var(--color-primary);
+      opacity: 0.2;
+    }
+  }
+  &-image-container {
+    background-color: transparent;
+    margin-bottom: 0;
+    position: relative;
+    overflow: visible;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      position: relative;
+      z-index: 2;
+      transition: transform 0.3s ease;
+    }
+    
+    &.rounded-tl {
+      border-top-left-radius: 8rem;
+    }
+    
+    &.rounded-tr {
+      border-top-right-radius: 8rem;
+    }
+    
+    &.rounded-bl {
+      border-bottom-left-radius: 8rem;
+    }
+  }
+  &-image-wrapper {
+    max-width: 88%;
+    display: block;
+  }
+  &-image-bg {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  &-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    z-index: 1;
+  }
+}
+
+.achievements-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.29rem;
+  color: #4b4334;
+  text-align: center;
+  margin-bottom: 3.42rem;
+  font-weight: 600;
+  line-height: 1.25em;
+  letter-spacing: 0.2px;
+}
+
+.achievement-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.16rem;
+  position: relative;
+  
+  &:nth-child(1) {
+    transform: translate(0.15em, 0);
+
+    &:hover {
+      transform: scale(1.05) translate(0.15em, 0);
+    }
+
+    .achievement-image-wrapper {
+      max-width: 75.5%;
+      margin: 20px auto 0;
+    }
+  }
+  &:nth-child(2) {
+    margin-top: 7.6rem;
+    transform: translate(-1.1em, 0);
+    
+    &:hover {
+      transform: scale(1.05) translate(-1.1em, 0);
+    } 
+
+    .achievement-image-wrapper {
+      margin: 21px 0 0 1.15em;
+      max-width: 78.5%;
+    }
+
+    @media (max-width: map.get(vars.$breakpoints, 'lg')) {
+      margin-top: 0;
+    }
+  }
+  &:nth-child(3) {
+    transform: translate(-2.35em, 0);
+
+    &:hover {
+      transform: scale(1.05) translate(-2.35em, 0);
+    }
+
+    .achievement-image-wrapper {
+      max-width: 75.9%;
+      margin: 20px auto 0;
+    }
+    .achievement-text {
+      margin: 5px auto 0;
+    }
+  }
+  
+  .achievement-text {
+    font-size: 1.69rem;
+    line-height: 1.41em;
+    color: #7e7666;
+    text-align: center;
+    max-width: 360px;
+    margin: 2px auto 0;
+    font-weight: 400;
+    letter-spacing: 0.27px;
+  }
+}

@@ -1,0 +1,84 @@
+@use "sass:map";
+
+// Colors
+$color-primary: #E6B5AC !default;
+$color-secondary: #E6C3A5 !default;
+$color-text: #2D3748 !default;
+$color-bg-light: #e0d3c2 !default;
+
+$color-bg-dark: #4A4A4A !default;
+$color-heading: #4b4334 !default;
+$gradient-bg: linear-gradient(135deg, #FFF5F2 0%, #FFF9F9 100%);
+$section-padding: clamp(4rem, 8vw, 8rem);
+$container-padding: clamp(1rem, 5vw, 2rem);
+$heading-large: clamp(2.5rem, 5vw, 4rem);
+$heading-medium: clamp(2rem, 4vw, 3rem);
+
+// Typography
+$font-primary: 'Oxygen', sans-serif !default;
+$font-secondary: 'Playfair Display', serif !default;
+
+// Breakpoints
+$breakpoints: (
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+  '2xl': 1536px
+) !default;
+
+// Spacing
+$spacing: (
+  '1': 0.25rem,
+  '2': 0.5rem,
+  '3': 1rem,
+  '4': 1.5rem,
+  '5': 2rem
+);
+
+// Convert variables to CSS custom properties
+:root {
+  // Solo las variables específicas del proyecto
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --color-text: #{$color-text};
+  --color-bg-light: #{$color-bg-light};
+  --color-bg-dark: #{$color-bg-dark};
+
+  --font-primary: #{$font-primary};
+  --font-secondary: #{$font-secondary};
+
+  // Layout
+  --section-padding: #{$section-padding};
+  --container-padding: #{$container-padding};
+  
+  // Typography
+  --heading-large: #{$heading-large};
+  --heading-medium: #{$heading-medium};
+  
+  // Colors
+
+  --color-heading: #{$color-heading};
+
+  // Gradients
+  --gradient-bg: #{$gradient-bg};
+}
+
+// Export variables
+
+:export {
+  colorPrimary: $color-primary;
+  colorSecondary: $color-secondary;
+  colorText: $color-text;
+  colorBgLight: $color-bg-light;
+  colorBgDark: $color-bg-dark;
+  fontPrimary: $font-primary;
+  fontSecondary: $font-secondary;
+  colorHeading: $color-heading;
+  gradientBg: $gradient-bg;
+  sectionPadding: $section-padding;
+  containerPadding: $container-padding;
+
+  headingLarge: $heading-large;
+  headingMedium: $heading-medium;
+}

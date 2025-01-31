@@ -1,0 +1,24 @@
+@use "../utils/variables" as vars;
+@use "sass:map";
+@use "./base";
+
+.faq {
+  &-section {
+    padding: clamp(4rem, 8vw, 8rem) 0;
+  }
+
+  &-container {
+    @extend .container;
+    display: flex;
+    gap: 4rem;
+    padding: 2rem;
+    align-items: start;
+  }
+
+  &-image-container {
+    width: 100%;
+    border-radius: 2rem;
+    overflow: hidden;
+  }
+
+}

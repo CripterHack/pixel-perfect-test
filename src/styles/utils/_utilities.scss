@@ -1,0 +1,42 @@
+@use "variables" as vars;
+@use "sass:map";
+
+// Spacing utilities
+@each $name, $size in vars.$spacing {
+  .m-#{$name} { margin: $size; }
+  .p-#{$name} { padding: $size; }
+}
+
+
+// Typography utilities
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-heading { font-family: var(--font-secondary); }
+.text-body { font-family: var(--font-primary); }
+
+// Layout utilities
+.grid {
+  display: grid;
+  gap: var(--grid-gap, 2rem);
+}
+
+// Additional utilities
+.highlight {
+  color: #d88d78;
+  &_two {
+    color: #ddba7c;
+  }
+}
+
+// Responsive utilities
+@media (min-width: map.get(vars.$breakpoints, 'md')) {
+
+  .md\:grid-1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Animaciones y transiciones específicas
+.transition-custom {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+} 

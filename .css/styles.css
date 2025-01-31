@@ -1,0 +1,13 @@
+/* Variables globales */
+:root {
+    --section-padding: clamp(4rem, 8vw, 8rem);
+    --container-padding: clamp(1rem, 5vw, 2rem);
+    --heading-large: clamp(2.5rem, 5vw, 4rem);
+    --heading-medium: clamp(2rem, 4vw, 3rem);
+    --color-primary: #E6B5AC;
+    --color-secondary: #E6C3A5;
+    --color-text: #2D3748;
+    --color-heading: #3D3D3D;
+    --color-bg-light: #FAF5F2;
+    --gradient-bg: linear-gradient(135deg, #FFF5F2 0%, #FFF9F9 100%);
+}

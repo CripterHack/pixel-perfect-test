@@ -1,0 +1,59 @@
+.accordion {
+  &-item {
+    border-bottom: 1px solid #E2D5D0;
+    margin-bottom: 1rem;
+  }
+
+  &-header {
+    padding: 1.5rem 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+
+    span {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--color-heading);
+    }
+  }
+
+
+  &-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    opacity: 0;
+    padding: 0 1rem;
+
+    &[aria-hidden="false"] {
+      max-height: 500px;
+      padding-bottom: 1.5rem;
+      display: block;
+      opacity: 1;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.8;
+    }
+  }
+
+  &-icon {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+  }
+
+} 

@@ -1,17 +1,9 @@
 # Frontend Technical Interview - Landing Page
 
-## Overview
-This project is a responsive landing page developed as part of a frontend technical interview. It showcases skills in responsive design, pixel-perfect implementation, and modern web development practices. The implementation is based on designs provided through the Zeplin platform, demonstrating the ability to accurately translate design specifications into functional code.
+## 📋 Overview
+This project is a responsive landing page developed as part of a frontend technical interview. It showcases skills in responsive design, pixel-perfect implementation, and modern web development practices. The implementation is based on designs provided through the Zeplin platform.
 
-## Design Implementation
-- Original designs provided via Zeplin platform
-- Pixel-perfect implementation following Zeplin specifications
-- Accurate color values and typography from design system
-- Asset management through Zeplin's resource management
-- Precise spacing and layout measurements
-- Style guide compliance
-
-## Key Features
+## 🎯 Key Features
 - Fully responsive design
 - Pixel-perfect implementation from Zeplin specs
 - Smooth animations and transitions
@@ -20,140 +12,92 @@ This project is a responsive landing page developed as part of a frontend techni
 - Optimized image loading with srcset
 - Modern CSS practices including Grid and Flexbox
 
-## Technologies Used
+## 🛠 Technologies Used
 - HTML5
-- CSS3
-- JavaScript (Vanilla)
+- CSS3 (Custom Properties, Grid, Flexbox)
+- JavaScript (ES6+)
 - TailwindCSS
+- SASS/SCSS
 - jQuery
 - Slick Carousel
 - Google Fonts (Playfair Display, Oxygen)
-- Zeplin (design handoff platform)
 
-## Technical Highlights
-- CSS custom properties for consistent theming
-- Intersection Observer API for scroll animations
-- Mobile-first responsive design
-- Progressive image loading
-- Semantic HTML structure
-- BEM-like CSS naming conventions
-- Performance optimizations
-- Design-to-code accuracy using Zeplin specifications
+## �� Project Structure
+Para ver la estructura detallada del proyecto y los estándares de código, consulta [Project Architecture](src/docs/ARCHITECTURE.md).
 
-## Project Structure
-```
-pixel-perfect-test/
-│
-├── index.html
-├── README.md
-│
-└── img/
+## 📚 Documentation
+- [Project Architecture](src/docs/ARCHITECTURE.md) - Estructura del proyecto y estándares de código
+- [Components Documentation](src/docs/COMPONENTS.md) - Documentación detallada de componentes
+- [Style Guide](src/docs/STYLES.md) - Sistema de diseño y utilidades CSS
 
-    ├── circle-text-image.png
-    ├── pdf-image.webp
-    ├── shape-cluster-.webp
-    ├── marni-image-cluster.webp
-    └── ... some other images
-```
+## 🚀 Quick Start
 
-## Development Requirements
+### Prerequisites
 - Modern web browser
 - Code editor (VS Code recommended)
-- Basic understanding of HTML, CSS, and JavaScript
-- Knowledge of responsive design principles
+- Basic knowledge of HTML, CSS, and JavaScript
 
-- Familiarity with CSS frameworks (TailwindCSS)
-- Experience with design handoff tools (Zeplin or Figma)
-
-## Getting Started
-1. Clone the repository
-2. Access the design specs in Zeplin (requires access credentials)
-3. Open `index.html` in your browser or set up a local development server:
-
-### Option 1: Python Simple Server
+### Installation
+1. Clone the repository:
 ```bash
-# Python 3.x
+git clone [repository-url]
+cd pixel-perfect-test
+```
+
+2. Open `index.html` in your browser or use a local server:
+
+```bash
+# Using Python
 python -m http.server 8000
 
-# Python 2.x
-python -m SimpleHTTPServer 8000
+# Or using Node.js
+npx serve
 ```
-Then visit `http://localhost:8000` in your browser
 
-### Option 2: Node.js HTTP Server
-```bash
-# Install globally
-npm install -g http-server
+3. Visit `http://localhost:8000` in your browser
 
-# Run server
-http-server -p 8000
-```
-Then visit `http://localhost:8000` in your browser
+## 💻 Development Guidelines
+- Seguimos estándares de código documentados en [ARCHITECTURE.md](src/docs/ARCHITECTURE.md)
+- Implementamos componentes según [COMPONENTS.md](src/docs/COMPONENTS.md)
+- Utilizamos el sistema de diseño definido en [STYLES.md](src/docs/STYLES.md)
 
-### Option 3: PHP Built-in Server
-```bash
-php -S localhost:8000
-```
-Then visit `http://localhost:8000` in your browser
+## 🎨 Design
+- Implementation based on Zeplin specifications
+- Consistent design system
+- CSS variables for theming
+- Responsive breakpoints
+- Asset optimization
 
-### Option 4: VS Code Live Server
-1. Install "Live Server" extension in VS Code
-2. Right click on `index.html`
-3. Select "Open with Live Server"
+## ⚡ Performance
+- Critical CSS inlined
+- Lazy loaded images
+- Resource optimization
+- Code minification
+- Image compression
 
-### Option 5: Browser Extension
-- Install "Web Server for Chrome" extension
-- Choose your project folder
-- Access through provided local URL
+## 🔒 Best Practices
+- Accessibility (WCAG 2.1)
+- SEO optimization
+- Performance optimization
+- Maintainable code
+- Clear documentation
 
-4. No build process required - everything is included via CDN
-
-## Best Practices Demonstrated
-- Semantic HTML5 elements
-- CSS custom properties for maintainability
-- Progressive enhancement
-- Responsive images
-- Accessibility considerations
-- Clean and documented code
-- Performance optimizations
-- Accurate design implementation from Zeplin specs
-
-## Browser Support
+## 🌐 Browser Support
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
 
-## Performance Considerations
-- Lazy loading of images
-- Optimized image formats (WebP)
-- Minimal use of external libraries
-- Efficient CSS animations
-- Responsive image loading with srcset
+## 🤝 Contributing
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
 
-## Interview Focus Areas
-- Responsive design implementation
-- Pixel-perfect attention to detail from Zeplin designs
-- Code organization and structure
-- CSS animation capabilities
-- JavaScript interactivity
-- Modern web development practices
-- Cross-browser compatibility
-- Performance optimization
-- Design-to-code workflow proficiency
-- Ability to work with design handoff tools
+## 📝 License
+This project is part of a technical interview process.
 
-## Design Handoff Process
-The implementation follows a professional design handoff workflow using Zeplin:
-- Accurate extraction of design tokens
-- Proper implementation of spacing and layout
-- Correct usage of typography and color systems
-- Asset optimization and management
-- Responsive breakpoint implementation
-- Design system consistency
-
-## Notes
-This project is part of a technical interview process and demonstrates capabilities in frontend development, particularly in responsive design and pixel-perfect implementation from Zeplin designs. It showcases both technical skills and attention to detail in creating modern web experiences.
-
-## License
-This project is created for demonstration purposes as part of a technical interview process.
+## 🙏 Acknowledgments
+- Design team for Zeplin specifications
+- Development community for resources and tools

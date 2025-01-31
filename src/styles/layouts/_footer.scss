@@ -1,0 +1,21 @@
+@use "../utils/variables" as vars;
+@use "../utils/typography" as type;
+@use "sass:map";
+
+.footer {
+  background-color: transparent;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: map.get(type.$font-sizes, 'sm');
+  color: #7e7666;
+
+  a {
+    color: #7e7666;
+    text-decoration: none;
+    margin: 0 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+} 

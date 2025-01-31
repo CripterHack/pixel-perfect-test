@@ -1,0 +1,99 @@
+@use "../utils/variables" as vars;
+@use "sass:map";
+
+.hero-section {
+    padding: 12.53rem 0 10rem;
+    position: relative;
+    overflow: visible;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+    }
+
+    .container {
+        max-width: 85%;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 1.75rem 0 1.6rem;
+        position: relative;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: minmax(auto, 600px) 1fr;
+        gap: 8rem;
+        align-items: center;
+        
+        @media (max-width: map.get(vars.$breakpoints, 'lg')) {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 5rem;
+        line-height: 1.22em;
+        color: #4b4334;
+        margin-bottom: 2.25rem;
+        font-weight: 600;
+        
+        @media (max-width: map.get(vars.$breakpoints, 'md')) {
+            font-size: 3.5rem;
+        }
+    }
+    
+    p {
+        font-size: 1.66rem;
+        line-height: 1.46em;
+        color: #7e7666;
+        margin-bottom: 2.25rem;
+        max-width: 700px;
+        font-weight: 400;
+        opacity: 1;
+        letter-spacing: 0.49px;
+    }
+}
+
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    margin-left: auto;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: calc(-12.6rem - 30%);
+        right: -0.25rem;
+        width: 105%;
+        height: 165%;
+        background-color: transparent;
+        background-image: url(../img/vector-shape.png);
+        background-size: cover;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        z-index: 1;
+
+    }
+    
+    .hero-image {
+        z-index: 2;
+        width: 100%;
+        height: 805px;
+        display: block;
+        position: relative;
+        margin: -9.65rem 0 0 -1.78rem;
+    }
+} 

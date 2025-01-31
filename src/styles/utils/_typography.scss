@@ -1,0 +1,59 @@
+@use "sass:map";
+
+// Font sizes
+$font-sizes: (
+  'xs': 0.75rem,    // 12px
+  'sm': 0.875rem,   // 14px
+
+  'base': 1rem,     // 16px
+  'lg': 1.125rem,   // 18px
+  'xl': 1.25rem,    // 20px
+  '2xl': 1.5rem,    // 24px
+  '3xl': 1.875rem,  // 30px
+  '4xl': 2.25rem    // 36px
+) !default;
+
+// Line heights
+$line-heights: (
+  'tight': 1.25,
+  'normal': 1.5,
+  'relaxed': 1.75
+);
+
+// Font weights
+$font-weights: (
+  'light': 300,
+  'normal': 400,
+  'medium': 500,
+  'bold': 700
+) !default;
+
+// Generate utility classes
+@each $name, $size in $font-sizes {
+  .text-#{$name} {
+    font-size: $size;
+  }
+}
+
+@each $name, $height in $line-heights {
+  .leading-#{$name} {
+    line-height: $height;
+  }
+}
+
+@each $name, $weight in $font-weights {
+  .font-#{$name} {
+    font-weight: $weight;
+  }
+}
+
+// Estilos específicos del proyecto que no se pueden lograr fácilmente con Tailwind
+.heading-large {
+  font-size: var(--heading-large);
+  line-height: 1.2;
+}
+
+.heading-medium {
+  font-size: var(--heading-medium);
+  line-height: 1.3;
+}
