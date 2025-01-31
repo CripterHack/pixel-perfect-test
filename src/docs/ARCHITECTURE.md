@@ -4,39 +4,84 @@
 
 ```
 pixel-perfect-test/
+├── dist/                # Build output directory
+│   ├── css/            # Compiled CSS files
+│   ├── js/             # Minified JavaScript files
+│   └── img/            # Optimized images
 ├── src/
-│   ├── assets/
-│   │   └── images/          # Optimized images
+│   ├── img/            # Source images
+│   ├── js/
+│   │   └── main.js     # Main JavaScript file
 │   ├── styles/
-│   │   ├── main.scss        # Main stylesheet
-│   │   ├── components/      # Component styles
+│   │   ├── main.scss   # Main stylesheet
+│   │   ├── components/ # Component styles
 │   │   │   ├── _accordion.scss
+│   │   │   ├── _buttons.scss
 │   │   │   ├── _tabs.scss
 │   │   │   └── _testimonials.scss
-│   │   ├── layouts/         # Layout styles
-│   │   │   ├── _hero.scss
-│   │   │   └── _achievements.scss
-│   │   └── utils/          # CSS utilities
-│   │       ├── _variables.scss
-│   │       ├── _animations.scss
-│   │       └── _typography.scss
-│   ├── js/
-│   │   ├── main.js         # Main JavaScript file
-│   │   ├── components/     # JavaScript components
-│   │   │   ├── accordion.js
-│   │   │   ├── tabs.js
-│   │   │   └── testimonials.js
-│   │   └── utils/         # JavaScript utilities
-│   │       └── animations.js
-│   └── docs/              # Documentation
+│   │   ├── layouts/    # Layout styles
+│   │   │   ├── _achievements.scss
+│   │   │   ├── _base.scss
+│   │   │   ├── _faq.scss
+│   │   │   ├── _footer.scss
+│   │   │   ├── _founder.scss
+│   │   │   ├── _header.scss
+│   │   │   └── _hero.scss
+│   │   └── utils/     # CSS utilities
+│   │       ├── _mixins.scss
+│   │       ├── _utilities.scss
+│   │       └── _variables.scss
+│   └── docs/          # Documentation
 │       ├── ARCHITECTURE.md
 │       ├── COMPONENTS.md
 │       └── STYLES.md
-├── index.html            # Entry point
-└── README.md            # Project overview
+├── server.js          # Development server
+├── package.json       # Project dependencies and scripts
+└── README.md         # Project overview
 ```
 
 ## Build System
+
+The project uses npm scripts for its build process:
+
+### Main Commands
+```bash
+npm start          # Alias for npm run dev
+npm run dev        # Start development server with hot reload
+npm run build      # Build project for production
+```
+
+### Build Process Steps
+1. **Clean** (`npm run clean`)
+   - Removes the dist directory
+   - Ensures clean build
+
+2. **Create Directories** (`npm run create:dirs`)
+   - Creates necessary directory structure in dist
+   - Sets up css, js, and img directories
+
+3. **SCSS Processing** (`npm run build:scss`)
+   - Compiles SCSS to CSS
+   - Applies minification
+   - Generates source maps
+   - Output to dist/css/main.css
+
+4. **JavaScript Processing** (`npm run build:js`)
+   - Minifies JavaScript files
+   - Handles error cases
+   - Output to dist/js/main.min.js
+
+5. **Asset Copying** (`npm run copy`)
+   - Copies HTML files
+   - Transfers images
+   - Maintains directory structure
+
+### Development Server
+The project includes an Express development server that provides:
+- Static file serving
+- Hot reload functionality via WebSocket
+- Automatic rebuild on file changes
+- Development convenience features
 
 ## Coding Standards
 
@@ -87,10 +132,10 @@ pixel-perfect-test/
 - Edge (latest)
 
 ## Build Process
-- Implementar Sass para el preprocesamiento de CSS
-- Utilizar un bundler (Webpack/Vite) para:
-  - Compilación de SCSS a CSS
-  - Minificación de código
-  - Optimización de imágenes
-  - Generación de source maps
+- Use Sass for CSS preprocessing
+- Utilize build tools for:
+  - SCSS to CSS compilation
+  - Code minification
+  - Image optimization
+  - Source maps generation
 ``` 

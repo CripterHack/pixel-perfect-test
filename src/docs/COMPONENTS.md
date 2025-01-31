@@ -3,39 +3,53 @@
 ## UI Components
 
 ### Accordion
-**Location**: `src/js/components/accordion.js`
-```javascript
-// Usage example:
-<div class="accordion-item">
-    <div class="accordion-header">Title</div>
-    <div class="accordion-content">Content</div>
+**Location**: `src/styles/components/_accordion.scss`
+```scss
+.accordion {
+    /* Component styles */
+}
+```
+**Usage Example**:
+```html
+<div class="accordion">
+    <div class="accordion__item">
+        <div class="accordion__header">Title</div>
+        <div class="accordion__content">Content</div>
+    </div>
 </div>
 ```
 **Features**:
 - Smooth animations
 - Keyboard accessibility
-- ARIA support
-- Mobile-friendly touch targets
+- Mobile-friendly design
+- Interactive headers
 
 ### Tabs
-**Location**: `src/js/components/tabs.js`
-```javascript
-// Usage example:
-<div class="tabs-container">
-    <button class="tab-button" data-tab="1">Tab 1</button>
-    <div class="tab-content" data-tab="1">Content 1</div>
+**Location**: `src/styles/components/_tabs.scss`
+```scss
+.tabs {
+    /* Component styles */
+}
+```
+**Usage Example**:
+```html
+<div class="tabs">
+    <div class="tabs__list">
+        <button class="tabs__button" data-tab="1">Tab 1</button>
+    </div>
+    <div class="tabs__content" data-tab="1">Content 1</div>
 </div>
 ```
 **Features**:
 - Smooth transitions
-- URL hash support
-- Keyboard navigation
 - Responsive design
+- Interactive navigation
+- Content panels
 
 ### Testimonials
 **Location**: `src/styles/components/_testimonials.scss`
-```css
-.testimonial-card {
+```scss
+.testimonials {
     /* Component styles */
 }
 ```
@@ -45,78 +59,156 @@
 - Quote styling
 - Responsive grid
 
+### Buttons
+**Location**: `src/styles/components/_buttons.scss`
+```scss
+.btn {
+    /* Component styles */
+}
+```
+**Features**:
+- Primary and secondary styles
+- Hover effects
+- Size variations
+- State management
+
 ## Layout Components
+
+### Header
+**Location**: `src/styles/layouts/_header.scss`
+```scss
+.header {
+    /* Layout styles */
+}
+```
+**Features**:
+- Navigation menu
+- Logo placement
+- Responsive design
+- Fixed positioning
 
 ### Hero Section
 **Location**: `src/styles/layouts/_hero.scss`
-```css
-.hero-section {
+```scss
+.hero {
     /* Layout styles */
 }
 ```
 **Features**:
 - Full-width design
-- Responsive grid
-- Background shapes
-- CTA button
+- Background elements
+- CTA placement
+- Responsive text
 
-### Achievement Grid
-**Location**: `src/styles/layouts/_achievements.scss`
-```css
-.achievements-grid {
-    /* Grid styles */
+### FAQ Section
+**Location**: `src/styles/layouts/_faq.scss`
+```scss
+.faq {
+    /* Layout styles */
 }
 ```
 **Features**:
-- CSS Grid layout
+- Accordion integration
+- Section spacing
+- Question grouping
+- Answer formatting
+
+### Footer
+**Location**: `src/styles/layouts/_footer.scss`
+```scss
+.footer {
+    /* Layout styles */
+}
+```
+**Features**:
+- Navigation links
+- Social media icons
+- Copyright information
+- Responsive columns
+
+### Founder Section
+**Location**: `src/styles/layouts/_founder.scss`
+```scss
+.founder {
+    /* Layout styles */
+}
+```
+**Features**:
+- Profile layout
+- Bio content
+- Image placement
+- Responsive design
+
+### Achievements Section
+**Location**: `src/styles/layouts/_achievements.scss`
+```scss
+.achievements {
+    /* Layout styles */
+}
+```
+**Features**:
+- Stats display
+- Grid layout
+- Animation effects
 - Responsive breakpoints
-- Card animations
-- Image optimization
 
 ## Utility Classes
 
-### Animation Utilities
-**Location**: `src/styles/utils/_animations.scss`
-```css
-.animate-on-scroll {
-    /* Animation styles */
+### Mixins
+**Location**: `src/styles/utils/_mixins.scss`
+```scss
+@mixin responsive($breakpoint) {
+    /* Mixin styles */
 }
 ```
 **Features**:
-- Scroll-based animations
-- Fade effects
-- Transform animations
-- Performance optimizations
+- Responsive breakpoints
+- Common patterns
+- Reusable styles
+- Cross-browser support
 
-### Typography Utilities
-**Location**: `src/styles/utils/_typography.scss`
-```css
-.font-playfair {
-    /* Typography styles */
+### Variables
+**Location**: `src/styles/utils/_variables.scss`
+```scss
+:root {
+    /* CSS Variables */
 }
 ```
 **Features**:
-- Font families
-- Text sizes
-- Line heights
-- Font weights
+- Color scheme
+- Typography
+- Spacing
+- Breakpoints
+
+### Utilities
+**Location**: `src/styles/utils/_utilities.scss`
+```scss
+.utility-class {
+    /* Utility styles */
+}
+```
+**Features**:
+- Spacing helpers
+- Typography classes
+- Display utilities
+- Flexbox helpers
 
 ## Best Practices
 
 ### Accessibility
-- Use proper ARIA labels
-- Implement keyboard navigation
-- Maintain sufficient color contrast
-- Provide text alternatives for images
+- Use semantic tags
+- Implement ARIA attributes
+- Ensure color contrast
+- Support keyboard navigation
 
 ### Performance
-- Lazy load components
-- Use CSS containment
-- Implement proper event delegation
-- Optimize animations
+- Optimize CSS selectors
+- Minimize specificity
+- Avoid excessive nesting
+- Reuse common styles
 
 ### Maintenance
-- Follow BEM naming
-- Document component usage
+- Follow consistent naming
+- Document complex components
 - Keep components modular
-- Implement proper error handling 
+- Implement theme variables 

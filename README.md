@@ -9,26 +9,41 @@ This project is a responsive landing page developed as part of a frontend techni
 - Smooth animations and transitions
 - Interactive elements (accordion, tabs, testimonials)
 - Custom typography and color schemes
-- Optimized image loading with srcset
 - Modern CSS practices including Grid and Flexbox
+- Hot reload development environment
 
 ## 🛠 Technologies Used
 - HTML5
-- CSS3 (Custom Properties, Grid, Flexbox)
+- CSS3/SCSS (Custom Properties, Grid, Flexbox)
 - JavaScript (ES6+)
 - TailwindCSS
-- SASS/SCSS
 - jQuery
 - Slick Carousel
 - Google Fonts (Playfair Display, Oxygen)
-- Node.js
-- Express
-- WebSocket (ws)
+- Node.js & Express (Development server)
+- WebSocket (Live reload)
+- Sass (CSS preprocessing)
 
-## 📚 Documentation
-- [Project Architecture](src/docs/ARCHITECTURE.md) - Estructura del proyecto y estándares de código
-- [Components Documentation](src/docs/COMPONENTS.md) - Documentación detallada de componentes
-- [Style Guide](src/docs/STYLES.md) - Sistema de diseño y utilidades CSS
+## 📚 Project Structure
+```
+pixel-perfect-test/
+├── dist/                # Build output directory
+├── src/
+│   ├── img/            # Source images
+│   ├── js/             # JavaScript files
+│   ├── styles/         # SCSS files
+│   │   ├── components/ # Component styles
+│   │   ├── layouts/    # Layout styles
+│   │   └── utils/      # Utilities and variables
+│   └── docs/           # Documentation
+├── server.js           # Development server
+└── package.json        # Project configuration
+```
+
+For detailed documentation, see:
+- [Project Architecture](src/docs/ARCHITECTURE.md)
+- [Components Documentation](src/docs/COMPONENTS.md)
+- [Styles Guide](src/docs/STYLES.md)
 
 ## 🚀 Quick Start
 
@@ -52,7 +67,7 @@ npm install
 ```bash
 npm run dev
 ```
-This will start the development server and enable hot reloading at [http://localhost:3000](http://localhost:3000).
+This will start the development server with hot reloading at [http://localhost:3000](http://localhost:3000).
 
 4. Create a production version:
 ```bash
@@ -77,11 +92,7 @@ npx serve
 - `npm run clean` - Cleans the dist directory
 - `npm run build:scss` - Compiles SCSS to CSS
 - `npm run build:js` - Minifies JavaScript files
-
-## 💻 Development Guidelines
-- Seguimos estándares de código documentados en [ARCHITECTURE.md](src/docs/ARCHITECTURE.md)
-- Implementamos componentes según [COMPONENTS.md](src/docs/COMPONENTS.md)
-- Utilizamos el sistema de diseño definido en [STYLES.md](src/docs/STYLES.md)
+- `npm run copy` - Copies static assets to dist
 
 ## 🎨 Design
 - Implementation based on Zeplin specifications
@@ -90,12 +101,19 @@ npx serve
 - Responsive breakpoints
 - Asset optimization
 
-## ⚡ Performance
-- Critical CSS inlined
-- Lazy loaded images
-- Resource optimization
-- Code minification
-- Image compression
+### Code Organization
+- SCSS follows BEM methodology
+- Components are modular and reusable
+- Layouts are responsive and mobile-first
+- JavaScript follows ES6+ standards
+
+### Build Process
+The build process includes:
+- SCSS compilation and minification
+- JavaScript minification
+- Image optimization
+- Static asset copying
+- Source maps generation
 
 ## 🔒 Best Practices
 - Accessibility (WCAG 2.1)
@@ -103,6 +121,12 @@ npx serve
 - Performance optimization
 - Maintainable code
 - Clear documentation
+
+### Performance Optimization
+- CSS and JavaScript minification
+- Image optimization
+- Lazy loading implementation
+- Critical CSS inlining
 
 ## 🌐 Browser Support
 - Chrome (latest)

@@ -2,196 +2,196 @@
 
 ## Design System
 
-### Base Styles
+### Base Variables
 Located in `src/styles/utils/_variables.scss`:
-```css
-:root {
-    /* Colors */
-    --color-primary: #E6B5AC;
-    --color-secondary: #E6C3A5;
-    --color-text: #2D3748;
-    --color-bg-light: #FAF5F2;
-    --color-bg-dark: #4A4A4A;
+```scss
+// Colors
+$primary-color: #E6B5AC;
+$secondary-color: #E6C3A5;
+$text-color: #2D3748;
+$bg-light: #FAF5F2;
+$bg-dark: #4A4A4A;
 
-    /* Typography */
-    --font-primary: 'Oxygen', sans-serif;
-    --font-secondary: 'Playfair Display', serif;
-    
-    /* Spacing */
-    --section-padding: clamp(4rem, 8vw, 8rem);
-    --container-padding: clamp(1rem, 5vw, 2rem);
-    
-    /* Typography Sizes */
-    --heading-large: clamp(2.5rem, 5vw, 4rem);
-    --heading-medium: clamp(2rem, 4vw, 3rem);
-}
+// Typography
+$font-primary: 'Oxygen', sans-serif;
+$font-secondary: 'Playfair Display', serif;
+
+// Spacing
+$section-padding: 4rem;
+$container-padding: 2rem;
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
 ```
 
 ### Layout System
 
-#### Grid System
-```css
+#### Grid and Containers
+```scss
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--container-padding);
+    padding: 0 $container-padding;
 }
 
 .grid {
     display: grid;
-    gap: var(--grid-gap, 2rem);
+    gap: 2rem;
 }
 ```
 
-#### Responsive Breakpoints
-```css
-/* Mobile First Approach */
-@media (min-width: 640px) { /* sm */ }
-@media (min-width: 768px) { /* md */ }
-@media (min-width: 1024px) { /* lg */ }
-@media (min-width: 1280px) { /* xl */ }
+#### Responsive Mixins
+In `src/styles/utils/_mixins.scss`:
+```scss
+@mixin responsive($breakpoint) {
+    @if $breakpoint == sm {
+        @media (min-width: $breakpoint-sm) { @content; }
+    } @else if $breakpoint == md {
+        @media (min-width: $breakpoint-md) { @content; }
+    } @else if $breakpoint == lg {
+        @media (min-width: $breakpoint-lg) { @content; }
+    } @else if $breakpoint == xl {
+        @media (min-width: $breakpoint-xl) { @content; }
+    }
+}
 ```
 
-### Component Styles
+### Components
 
 #### Buttons
-```css
-.btn-primary {
-    background-color: var(--color-primary);
-    color: white;
+In `src/styles/components/_buttons.scss`:
+```scss
+.btn {
+    display: inline-block;
     padding: 1rem 2rem;
     border-radius: 0.5rem;
     transition: transform 0.3s ease;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
+    
+    &--primary {
+        background-color: $primary-color;
+        color: white;
+    }
+    
+    &--secondary {
+        background-color: $secondary-color;
+        color: white;
+    }
 }
 ```
 
-#### Cards
-```css
-.card {
+#### Accordion
+In `src/styles/components/_accordion.scss`:
+```scss
+.accordion {
+    &__item {
+        border-bottom: 1px solid rgba($text-color, 0.1);
+    }
+    
+    &__header {
+        padding: 1rem;
+        cursor: pointer;
+    }
+    
+    &__content {
+        padding: 1rem;
+        display: none;
+        
+        &--active {
+            display: block;
+        }
+    }
+}
+```
+
+### Layouts
+
+#### Header
+In `src/styles/layouts/_header.scss`:
+```scss
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
     background: white;
-    border-radius: 1rem;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-```
-
-### Animation System
-
-#### Transitions
-```css
-/* Default Transitions */
-.transition-base {
-    transition-duration: 300ms;
-    transition-timing-function: ease;
-}
-
-/* Hover Effects */
-.hover-lift {
-    transition: transform 0.3s ease;
-}
-
-.hover-lift:hover {
-    transform: translateY(-5px);
-}
-```
-
-#### Keyframe Animations
-```css
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
     }
 }
 ```
 
-### Utility Classes
-
-#### Spacing
-```css
-.m-1 { margin: 0.25rem; }
-.m-2 { margin: 0.5rem; }
-.m-3 { margin: 1rem; }
-.m-4 { margin: 1.5rem; }
-.m-5 { margin: 2rem; }
-
-.p-1 { padding: 0.25rem; }
-.p-2 { padding: 0.5rem; }
-.p-3 { padding: 1rem; }
-.p-4 { padding: 1.5rem; }
-.p-5 { padding: 2rem; }
+#### Hero
+In `src/styles/layouts/_hero.scss`:
+```scss
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: $bg-light;
+    
+    &__content {
+        max-width: 600px;
+    }
+}
 ```
 
-#### Typography
-```css
-.text-primary { color: var(--color-primary); }
-.text-secondary { color: var(--color-secondary); }
-.text-heading { font-family: var(--font-secondary); }
-.text-body { font-family: var(--font-primary); }
+### Utilities
+In `src/styles/utils/_utilities.scss`:
+```scss
+// Spacing
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 2rem; }
+
+// Typography
+.text-primary { color: $primary-color; }
+.text-secondary { color: $secondary-color; }
+.font-primary { font-family: $font-primary; }
+.font-secondary { font-family: $font-secondary; }
 ```
-
-### Best Practices
-
-1. **CSS Organization**
-   - Use BEM naming convention
-   - Keep selectors flat
-   - Avoid !important
-   - Use CSS custom properties for theming
-
-2. **Performance**
-   - Minimize render-blocking CSS
-   - Use CSS containment
-   - Optimize animations
-   - Implement critical CSS
-
-3. **Maintainability**
-   - Document complex CSS
-   - Use consistent naming
-   - Keep components modular
-   - Follow single responsibility principle
-
-4. **Accessibility**
-   - Maintain color contrast
-   - Support reduced motion
-   - Implement proper focus states
-   - Use relative units
-
-## Component Styles
-
-## Utility Classes
-
-## References
-
-- [COMPONENTS.md](src/docs/COMPONENTS.md) for implementation details
-
-## Design System
-
-## Animation System
-
-## CSS Architecture
 
 ## Best Practices
 
-## Accessibility
+### CSS Organization
+- Use BEM naming methodology
+- Keep selectors flat
+- Avoid using !important
+- Use SCSS variables for theming
 
-## Browser Support
+### Performance
+- Minify CSS in production
+- Optimize selectors
+- Use CSS Grid and Flexbox for layouts
+- Implement critical CSS when necessary
 
-## Contributing
+### Maintainability
+- Document complex CSS
+- Use consistent naming
+- Keep components modular
+- Follow single responsibility principle
 
-## License
+### Accessibility
+- Maintain proper color contrast
+- Support reduced motion mode
+- Implement proper focus states
+- Use relative units
 
-## Acknowledgments 
+## Build Process
+The project uses `sass` to compile SCSS to CSS:
+```bash
+npm run build:scss
+```
+
+## References
+- [COMPONENTS.md](COMPONENTS.md) for implementation details
+- [ARCHITECTURE.md](ARCHITECTURE.md) for project structure 
