@@ -21,9 +21,9 @@ This project is a responsive landing page developed as part of a frontend techni
 - jQuery
 - Slick Carousel
 - Google Fonts (Playfair Display, Oxygen)
-
-## �� Project Structure
-Para ver la estructura detallada del proyecto y los estándares de código, consulta [Project Architecture](src/docs/ARCHITECTURE.md).
+- Node.js
+- Express
+- WebSocket (ws)
 
 ## 📚 Documentation
 - [Project Architecture](src/docs/ARCHITECTURE.md) - Estructura del proyecto y estándares de código
@@ -33,9 +33,8 @@ Para ver la estructura detallada del proyecto y los estándares de código, cons
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Modern web browser
-- Code editor (VS Code recommended)
-- Basic knowledge of HTML, CSS, and JavaScript
+- Node.js (Latest 18.20 LTS version recommended)
+- npm (comes with Node.js)
 
 ### Installation
 1. Clone the repository:
@@ -44,17 +43,40 @@ git clone [repository-url]
 cd pixel-perfect-test
 ```
 
-2. Open `index.html` in your browser or use a local server:
-
+2. Install dependencies:
 ```bash
+npm install
+```
+
+3. Start development server:
+```bash
+npm run dev
+```
+This will start the development server and enable hot reloading at [http://localhost:3000](http://localhost:3000).
+
+4. Create a production version:
+```bash
+npm run build
+```
+
+5. Go to dist folder and run production server:
+```bash
+cd dist
+```
+
 # Using Python
 python -m http.server 8000
 
 # Or using Node.js
 npx serve
-```
 
-3. Visit `http://localhost:8000` in your browser
+### Available Scripts
+- `npm start` - Alias for npm run dev
+- `npm run dev` - Starts development server with hot reload
+- `npm run build` - Builds the project for production
+- `npm run clean` - Cleans the dist directory
+- `npm run build:scss` - Compiles SCSS to CSS
+- `npm run build:js` - Minifies JavaScript files
 
 ## 💻 Development Guidelines
 - Seguimos estándares de código documentados en [ARCHITECTURE.md](src/docs/ARCHITECTURE.md)
