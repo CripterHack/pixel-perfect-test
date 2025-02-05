@@ -108,7 +108,7 @@ h1, h2, h3, .font-playfair {
     <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
 
     <!-- Scripts -->
-    <script src="https://cdn.tailwindcss.com/3.4.16" defer></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
     <script src="/js/main.min.js" defer></script>
@@ -239,7 +239,7 @@ h1, h2, h3, .font-playfair {
         <div class="founder-grid">
             <div class="founder-image-container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div class="founder-image-wrapper relative">
-                    <div class="w-full max-w-md mx-auto md:mx-0 relative">
+                    <div class="w-full relative">
                         <img 
                             src="img/marni-image-cluster.webp" 
                             srcset="img/marni-image-cluster@2x.webp 2x, img/marni-image-cluster@3x.webp 3x" 
@@ -255,7 +255,7 @@ h1, h2, h3, .font-playfair {
                     <h2 class="text-4xl md:text-5xl font-playfair">
                         Meet our founder, <span class="highlight">Marni</span>
                     </h2>
-                    <div class="founder-text text-gray-700">
+                    <div class="founder-text">
                         <p class="text-lg">
                             Having been married for 17 years, divorced, and successfully dated again in today's complex social environment, and now happily married, Marni understands what it feels like to be lonely and sick of wasting time going on dates and having relationships with unavailable men that go nowhere.
                         </p>
@@ -263,13 +263,13 @@ h1, h2, h3, .font-playfair {
                             Through her own journey to find love, Marni discovered that creating a process to shorten the journey for other women suffering from the inability to create emotionally safe and fulfilling life relationships was truly the mission of her soul and purpose.
                         </p>
                     </div>
-                    <a href="#" class="btn-primary bg-[#e27c61] mt-6 inline-block">
+                    <a href="#" class="btn-primary mt-6 inline-block">
                         Discover Marni's Proven Process
                     </a>
                 </div>
             </div>
         </div>
-        <div class="container mx-auto px-4 mt-16">
+        <div class="logos-container mx-auto mt-0">
             <div class="logos-grid grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
                 <img src="img/oprah-logo.png" srcset="img/oprah-logo@2x.png 2x, img/oprah-logo@3x.png 3x" alt="O Magazine" class="logo-item max-h-8 md:max-h-[6.5rem] w-auto transition-all duration-300" loading="lazy">
                 <img src="img/dr-phil-logo.png" srcset="img/dr-phil-logo@2x.png 2x, img/dr-phil-logo@3x.png 3x" alt="Dr. Phil" class="logo-item max-h-8 md:max-h-[6.5rem] w-auto transition-all duration-300" loading="lazy">
@@ -281,34 +281,34 @@ h1, h2, h3, .font-playfair {
     </section>
 
     <section class="faq-section">
-        <div class="container mx-auto">
+        <div class="mx-auto">
             <div class="faq-container">
                 <div class="accordion-wrapper space-y-4 max-w-3xl mx-auto">
                     <div class="accordion-item border-b border-gray-300">
-                        <button class="accordion-header flex justify-between items-center w-full py-4 text-left text-lg font-semibold focus:outline-none font-playfair" aria-expanded="false">
+                        <button class="accordion-header flex justify-between items-center w-full py-4 text-left text-lg font-bold focus:outline-none font-playfair" aria-expanded="false">
                             <span>Let go of limiting beliefs</span>
                             <span class="accordion-icon text-xl transition-transform">+</span>
                         </button>
                         <div class="accordion-content overflow-hidden max-h-0 transition-[max-height] duration-300 ease-in-out" aria-hidden="true">
-                            <p class="py-2 text-gray-700">If you don't think you deserve a good man, you're grappling with accepting that a relationship is not in the cards for you, or you think you have to settle for less than ideal soul mate, we'll help you identify and learn to let go of what's holding you back.</p>
+                            <p class="py-2">If you don't think you deserve a good man, you're grappling with accepting that a relationship is not in the cards for you, or you think you have to settle for a less than ideal soul mate, we'll help you identify and learn to let go of what's holding you back.</p>
                         </div>
                     </div>
                     <div class="accordion-item border-b border-gray-300">
-                        <button class="accordion-header flex justify-between items-center w-full py-4 text-left text-lg font-semibold focus:outline-none font-playfair" aria-expanded="false">
+                        <button class="accordion-header flex justify-between items-center w-full py-4 text-left text-lg font-bold focus:outline-none font-playfair" aria-expanded="false">
                             <span>Break down barriers</span>
                             <span class="accordion-icon text-xl transition-transform">+</span>
                         </button>
                         <div class="accordion-content overflow-hidden max-h-0 transition-[max-height] duration-300 ease-in-out" aria-hidden="true">
-                            <p class="py-2 text-gray-700">Learn how to break down the walls that have been keeping you from finding true love and creating lasting relationships.</p>
+                            <p class="py-2">Learn how to break down the walls that have been keeping you from finding true love and creating lasting relationships.</p>
                         </div>
                     </div>
                     <div class="accordion-item border-b border-gray-300">
-                        <button class="accordion-header flex justify-between items-center w-full py-4 text-left text-lg font-semibold focus:outline-none font-playfair" aria-expanded="false">
+                        <button class="accordion-header flex justify-between items-center w-full py-4 text-left text-lg font-bold focus:outline-none font-playfair" aria-expanded="false">
                             <span>Fall in love with your true self</span>
                             <span class="accordion-icon text-xl transition-transform">+</span>
                         </button>
                         <div class="accordion-content overflow-hidden max-h-0 transition-[max-height] duration-300 ease-in-out" aria-hidden="true">
-                            <p class="py-2 text-gray-700">Discover how to embrace and love your authentic self, making you naturally more attractive to potential partners who will value you for who you truly are.</p>
+                            <p class="py-2">Discover how to embrace and love your authentic self, making you naturally more attractive to potential partners who will value you for who you truly are.</p>
                         </div>
                     </div>
                 </div>
@@ -316,7 +316,7 @@ h1, h2, h3, .font-playfair {
                     <img 
                         src="img/mask-group-120.webp" srcset="img/mask-group-120@2x.webp 2x, img/mask-group-120@3x.webp 3x"
                         alt="Woman at sunset" 
-                        class="w-full h-full object-cover rounded-2xl" 
+                        class="w-full h-full object-cover" 
                         width="600" 
                         height="800"
                         loading="lazy"
@@ -327,24 +327,24 @@ h1, h2, h3, .font-playfair {
     </section>
 
     <section class="testimonials-section text-white py-16">
-        <div class="testimonials-container container mx-auto max-w-6xl px-6">
+        <div class="testimonials-container mx-auto max-w-6xl px-6">
             <h2 class="testimonials-title text-3xl md:text-5xl font-playfair text-center md:text-left text-[#fffaf3] mb-12">See how women have been<br>impacted by the <span class="highlight_two">power of love:</span></h2>
             <div class="testimonials-grid grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div class="testimonial-card bg-[#e0d3c2] text-gray-800 p-6 md:p-10 rounded-none md:rounded-tl-[2.5rem] shadow-lg">
                     <div class="testimonial-header font-playfair">"Once Marni held me accountable, it was easier for me to finally recognize when Mr. Right (Mark) came along."</div>
-                    <p class="testimonial-text text-gray-700">If I hadn't followed the guiding hand of Marni, I wouldn't have been ready to accept the moments and opportunities presented to me every day.</p>
+                    <p class="testimonial-text">If I hadn't followed the guiding hand of Marni, I wouldn't have been ready to accept the moments and opportunities presented to me every day.</p>
                     <div class="testimonial-author flex items-center mt-6">
                         <img src="img/testimonial-1-image.webp" srcset="img/testimonial-1-image@2x.webp 2x, img/testimonial-1-image@3x.webp 3x" alt="Janice" class="author-image w-12 h-12 rounded-full" loading="lazy">
-                        <span class="author-name ml-3 text-[#DAA49A] font-semibold text-lg">Janice</span>
+                        <span class="author-name ml-3 font-bold text-lg">Janice</span>
                     </div>
                 </div>
 
                 <div class="testimonial-card bg-[#e0d3c2] text-gray-800 p-6 md:p-10 rounded-none md:rounded-tl-[2.5rem] shadow-lg">
                     <div class="testimonial-header font-playfair">"I am now much more grounded and confident and I feel like I'm living the life that I wanted to live now."</div>
-                    <p class="testimonial-text text-gray-700">When I first joined the program, the best initial results I got were me actually loving who I am. I think I always had an appreciation for myself, but I didn't truly believe that I was worthy of great things.</p>
+                    <p class="testimonial-text">When I first joined the program, the best initial results I got were me actually loving who I am. I think I always had an appreciation for myself, but I didn't truly believe that I was worthy of great things.</p>
                     <div class="testimonial-author flex items-center mt-6">
                         <img src="img/testimonial-2-image.webp" srcset="img/testimonial-2-image@2x.webp 2x, img/testimonial-2-image@3x.webp 3x" alt="Jill" class="author-image w-12 h-12 rounded-full" loading="lazy">
-                        <span class="author-name ml-3 text-[#DAA49A] font-semibold text-lg">Jill</span>
+                        <span class="author-name ml-3 font-bold text-lg">Jill</span>
                     </div>
                 </div>
             </div>
@@ -352,59 +352,59 @@ h1, h2, h3, .font-playfair {
     </section>
 
     <section class="agenda-section pt-16 pb-0">
-        <div class="agenda-container container mx-auto max-w-6xl px-6 pb-16">
+        <div class="agenda-container mx-auto max-w-6xl px-6 pb-16">
             <div class="agenda-title">
-                <h2 class="text-4xl md:text-5xl font-playfair text-[#4A4A4A] mb-12">What's on<br>the agenda</h2>
+                <h2 class="mb-12">What's on<br>the agenda</h2>
             </div>
             <div class="agenda-content">
                 <div class="relative flex justify-center mb-12">
-                    <div class="tabs-container bg-[#E3D6C8] px-6 py-2 rounded-full flex gap-4 shadow-md flex-nowrap flex-row">
-                        <button class="tab-button active px-8 py-3 rounded-full text-white bg-[#A89987] transition-all" data-tab="1">Day 1</button>
-                        <button class="tab-button px-8 py-3 rounded-full text-[#4A4A4A] hover:bg-[#c7b8a6] transition-all" data-tab="2">Day 2</button>
-                        <button class="tab-button px-8 py-3 rounded-full text-[#4A4A4A] hover:bg-[#c7b8a6] transition-all" data-tab="3">Day 3</button>
+                    <div class="tabs-container bg-[#aa9f89] px-6 py-2 rounded-full flex gap-4 shadow-md flex-nowrap flex-row">
+                        <button class="tab-button font-playfair active px-8 py-3 rounded-full text-white transition-all" data-tab="1">Day 1</button>
+                        <button class="tab-button font-playfair px-8 py-3 rounded-full transition-all" data-tab="2">Day 2</button>
+                        <button class="tab-button font-playfair px-8 py-3 rounded-full transition-all" data-tab="3">Day 3</button>
                     </div>
                 </div>
                 
                 <div class="tab-content active" data-tab="1">
-                    <h3 class="text-2xl font-playfair font-semibold text-[#4A4A4A] mb-4">Your REVEAL Day! (aka The Silver Bullet)</h3>
+                    <h3 class="tab-title font-bold mb-4">Your REVEAL Day! (aka The Silver Bullet)</h3>
                     <p class="text-gray-700 mb-6">Identify your personal 10% blindspot (everyone has one) that sends quality men running for the hills and clear limiting beliefs that keep you stuck in the scarcity mindset (so you can attract a quality man who's words and actions actually match).</p>
                     
                     <div class="agenda-steps relative">
                         <div class="absolute left-5 top-4 bottom-0 w-1 bg-[#DAA49A]"></div>
 
                         <div class="step-item relative flex items-start mb-8">
-                            <div class="step-number w-10 h-10 bg-[#DAA49A] text-white font-bold flex items-center justify-center rounded-full z-10">1</div>
+                            <div class="step-number w-10 h-10 text-white font-bold flex items-center justify-center rounded-full z-10">1</div>
                             <div class="step-content ml-6">
-                                <h3 class="font-semibold text-lg text-[#4A4A4A]">Understand Why</h3>
-                                <p class="text-gray-700">Even though you've read all the self-help books and followed all the rules — you're still single and how to make our secret technology work for you so that you attract the hot, high-quality men your heart desires.</p>
+                                <h3 class="font-bold">Understand Why</h3>
+                                <p>Even though you've read all the self-help books and followed all the rules — you're still single and how to make our secret technology work for you so that you attract the hot, high-quality men your heart desires.</p>
                             </div>
                         </div>
                         <div class="step-item relative flex items-start mb-8">
-                            <div class="step-number w-10 h-10 bg-[#DAA49A] text-white font-bold flex items-center justify-center rounded-full z-10">2</div>
+                            <div class="step-number w-10 h-10 text-white font-bold flex items-center justify-center rounded-full z-10">2</div>
                             <div class="step-content ml-6">
-                                <h3 class="font-semibold text-lg text-[#4A4A4A]">Learn 4 Characteristics that Attract Men</h3>
-                                <p class="text-gray-700">Not just any men, but men who are open, vulnerable, and committed, so that no man will ever disappear on you again.</p>
+                                <h3 class="font-bold">Learn 4 Characteristics that Attract Men</h3>
+                                <p>Not just any men, but men who are open, vulnerable, and committed, so that no man will ever disappear on you again.</p>
                             </div>
                         </div>
                         <div class="step-item relative flex items-start mb-8">
-                            <div class="step-number w-10 h-10 bg-[#DAA49A] text-white font-bold flex items-center justify-center rounded-full z-10">3</div>
+                            <div class="step-number w-10 h-10 text-white font-bold flex items-center justify-center rounded-full z-10">3</div>
                             <div class="step-content ml-6">
-                                <h3 class="font-semibold text-lg text-[#4A4A4A]">Reprogram Your Dating GPS</h3>
-                                <p class="text-gray-700">Understand why now matter HOW you meet a man it won't ever work until you reprogram your dating GPS so that you become "the destination" for the men you want.</p>
+                                <h3 class="font-bold">Reprogram Your Dating GPS</h3>
+                                <p>Understand why now matter HOW you meet a man it won't ever work until you reprogram your dating GPS so that you become "the destination" for the men you want.</p>
                             </div>
                         </div>
                         <div class="step-item relative flex items-start mb-8">
-                            <div class="step-number w-10 h-10 bg-[#DAA49A] text-white font-bold flex items-center justify-center rounded-full z-10">4</div>
+                            <div class="step-number w-10 h-10 text-white font-bold flex items-center justify-center rounded-full z-10">4</div>
                             <div class="step-content ml-6">
-                                <h3 class="font-semibold text-lg text-[#4A4A4A]">Learn what "feminine" means now</h3>
-                                <p class="text-gray-700">Especially as a successful woman so that you don't have to jump into the girly-girl bucket to attract a high quality man.</p>
+                                <h3 class="font-bold">Learn what "feminine" means now</h3>
+                                <p>Especially as a successful woman so that you don't have to jump into the girly-girl bucket to attract a high quality man.</p>
                             </div>
                         </div>
                         <div class="step-item relative flex items-start">
-                            <div class="step-number w-10 h-10 bg-[#DAA49A] text-white font-bold flex items-center justify-center rounded-full z-10">5</div>
+                            <div class="step-number w-10 h-10 text-white font-bold flex items-center justify-center rounded-full z-10">5</div>
                             <div class="step-content ml-6">
-                                <h3 class="font-semibold text-lg text-[#4A4A4A]">Remove Limiting Beliefs</h3>
-                                <p class="text-gray-700">Eliminate the "nothing works for me" belief in your head so that the universe knows you are loveable and sends you the right man to love.</p>
+                                <h3 class="font-bold">Remove Limiting Beliefs</h3>
+                                <p>Eliminate the "nothing works for me" belief in your head so that the universe knows you are loveable and sends you the right man to love.</p>
                             </div>
                         </div>
                     </div>

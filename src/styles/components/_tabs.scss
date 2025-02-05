@@ -5,7 +5,7 @@
 .tabs {
   &-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-bottom: 2rem;
     gap: 1rem;
   }
@@ -54,10 +54,12 @@
     cursor: pointer;
     background-color: transparent;
     border: none;
-    color: #4A5568;
-    padding: 1rem clamp(1.5rem, 3vw, 2.5rem);
+    color: #4d4433;
+    padding: 0.25rem 4rem 0.6rem;
     transition: all 0.3s ease;
-    border-radius: 2rem;
+    border-radius: 3rem;
+    line-height: 3.19rem;
+    font-size: 2.57rem;
 
     &:hover:not(.active) {
       background-color: rgba(218,164,154,0.1);
@@ -70,28 +72,57 @@
   &-content {
     transition: opacity 0.3s ease;
     opacity: 0;
+    display: none;
 
     &.active {
       opacity: 1;
       display: block;
+    }
+
+    .tab-title {
+      color: #2c2820;
+      font-size: 2.19rem;
+      line-height: 3.32rem;
+    }
+
+    .agenda-steps {
+      h3 {
+        color: #2c2820;
+        font-size: 1.88rem;
+        line-height: 3.32rem;
+      }
+      p {
+        font-size: 1.25rem;
+        color: #7e7666;
+        line-height: 1.9rem;
+        letter-spacing: 0.01em;
+      }
     }
   }
 }
 
 // Agenda specific tabs
 .agenda {
+  &-title {
+    font-size: 5rem;
+    line-height: 5.63rem;
+    font-weight: 800;
+    color: #2c2820;
+  }
+
   &-section {
     background: linear-gradient(245deg, #eac6b0 0%, #fffbf5 70%);
+
   }
 
   &-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2.3rem 4.4% 2rem;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 4rem;
+    gap: 13rem;
   }
 
   &-steps {
@@ -107,14 +138,17 @@
   }
 
   &-number {
-    width: 32px;
-    height: 32px;
+    width: 56px;
+    height: 56px;
     background-color: #e99077;
     color: white;
     border-radius: 50%;
     @include mix.flex(row, center, center);
-    font-weight: bold;
     flex-shrink: 0;
+    line-height: 2.19rem;
+    letter-spacing: 0.24px;
+    font-family: 'Oxygen';
+    font-size: 1.5rem;
   }
 
   &-content {

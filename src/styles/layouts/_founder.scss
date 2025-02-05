@@ -4,7 +4,7 @@
 
 .founder {
   &-section {
-    padding: var(--section-padding) 0;
+    padding: 5.25rem 0 7.7rem;
     @include mix.grid(2, clamp(3rem, 6vw, 6rem));
     align-items: center;
 
@@ -17,7 +17,7 @@
   &-grid {
     max-width: 75.7%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0;
     align-items: center;
 
     @media (min-width: map.get(vars.$breakpoints, 'md')) {
@@ -46,6 +46,34 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+  &-content {
+
+    margin-top: 1.3rem;
+    margin-left: -3px;
+
+    h2 {
+      font-weight: 600;
+      font-size: 5.75rem;
+      line-height: 6.12rem;
+      color: var(--color-heading);
+    }
+    
+    .btn-primary {
+      margin-top: 1rem;
+      background-color: #e27c61;
+    }
+  }
+  &-text {
+    margin: 1.75rem 0 0 0;
+
+    p {
+      font-size: 1.69rem;
+      line-height: 1.41em;
+      letter-spacing: 0.01em;
+      margin: 0 0 2.36rem;
+      color: #7e7666;
     }
   }
 }

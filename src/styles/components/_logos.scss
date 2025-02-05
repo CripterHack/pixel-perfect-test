@@ -5,18 +5,43 @@
   &-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: clamp(2rem, 4vw, 4rem);
+    gap: clamp(1rem, 4vw, 4rem);
     align-items: center;
-    margin-top: 4rem;
+    margin-top: 3.5rem;
     opacity: 1;
-    padding: clamp(3rem, 6vw, 6rem) 0;
+    padding: 0;
 
-    @media (min-width: map.get(vars.$breakpoints, 'md')) {
+    @media (max-width: map.get(vars.$breakpoints, 'md')) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
+  &-container {
+    width: 100%;
+    max-width: 90%;
 
-  &-item {
-    max-width: clamp(80px, 15vw, 120px);
+    @media (max-width: map.get(vars.$breakpoints, 'md')) {
+      max-width: 95%;
+    }
   }
 }
+
+.logo-item {
+  max-width: clamp(80px, 15vw, 120px);
+  min-width: fit-content;
+
+  @media (min-width: map.get(vars.$breakpoints, 'md')) {
+    &[src*="oprah"] {
+      margin-left: 5.55rem;
+    }
+    &[src*="phil"] {
+      margin-left: -7.45rem;
+    }
+    &[src*="cosmopolitan"] {
+      margin-left: -3.4rem;
+    }
+    &[src*="glamour"] {
+      margin-left: 3.4rem;
+    }
+  }
+}
+
